@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Docker Manager</h1>
+      <div class="ctn-btn-add">
+        <button class="add-container" (click)="changeState()">New container</button>
+      </div>
+    </header>
+    <div class="ctn-create-container" *ngIf="state">
+      <input type="text" class="input-container" placeholder="Input id container" [(ngModel)]="container.id"/>
+      <input type="text" class="input-container" placeholder="Input name container" [(ngModel)]="container.name"/>
+      <button class="add" (click)="addContainer()">ADD container</button>
+    </div>
+    <main>
+      <div class="ctn-card" *ngFor="let container of containers; index as i">
+        <div class="card">
+          <h2 class="name-container">Name: {{ container.name }}</h2>
+          <h2 class="id-container">Id: {{ container.id }}</h2>
+          <div class="ctn-btns">
+            <button class="docker-event" (click)="start(container.id)">
+              Start
+            </button>
+            <button class="docker-event" (click)="stop(container.id)">
+              Stop
+            </button>
+            <button class="docker-event" (click)="pause(container.id)">
+              Pause
+            </button>
+            <button class="docker-event" (click)="unpause(container.id)">
+              Unpause
+            </button>
+          </div>
+          <button class="delete" (click)="delete(container.id)">
+            Delete DB
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
