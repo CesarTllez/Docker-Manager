@@ -22,7 +22,7 @@ export class DockerService {
   }
 
   delete(id: string){
-    return this._http.delete<any>(`${environment.PATH}/delete/${id}`)
+    return this._http.delete<any>(`${environment.PATH}/deleteById/${id}`)
   }
 
   start(id: string){

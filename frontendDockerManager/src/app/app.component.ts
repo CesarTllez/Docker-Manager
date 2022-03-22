@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   ngOnInit(){
     this.dockerService.getAll().subscribe(
       response => {
-        this.containers = response.containers;
+        this.containers = response;
       },
       error => {
         console.log(error)

@@ -11,6 +11,12 @@ header {
   margin-bottom: 5em;
 }
 
+.docker-icon {
+  width: 4em;
+  height: 100%;
+  margin-left: 1em;
+}
+
 .ctn-create-container {
   width: 15em;
   height: auto;
@@ -52,7 +58,8 @@ header {
   display: flex;
   justify-content: left;
   align-items: center;
-  padding-left: 1em;
+  padding-left: .5em;
+  padding-right: 1em;
   margin: 0;
   text-transform: capitalize;
   color: #fff;
@@ -178,6 +185,10 @@ main {
 }
 
 @media(max-width: 450px){
+  .title {
+    font-size: 1.5em;
+  }
+
   .card {
     width: 20em;
   }
